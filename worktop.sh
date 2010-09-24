@@ -109,8 +109,6 @@ worktop() {
     fi
   fi
 
-  echo "Changing to worktop [${name}]" >&2
-
   local gem_dir
   gem_dir="${base_dir}/${name}"
 
@@ -144,6 +142,7 @@ worktop() {
   if [ -n "${1:-""}" ]; then
     $@
   else
+    echo "Changing to worktop [${name}]" >&2
     return $?
   fi
 }
