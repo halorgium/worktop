@@ -141,6 +141,9 @@ worktop() {
 
   if [ -n "${1:-""}" ]; then
     $@
+    result=$?
+    __worktop_uncd
+    return $result
   else
     echo "Changing to worktop [${name}]" >&2
     return $?
